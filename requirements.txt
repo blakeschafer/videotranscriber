@@ -1,0 +1,7 @@
+ffmpeg-python
+pytube
+openai-whisper
+torch
+rich
+beautifulsoup4
+requests
