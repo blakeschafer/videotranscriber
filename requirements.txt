@@ -1,7 +1,4 @@
-ffmpeg-python
-pytube
+yt-dlp
 openai-whisper
 torch
 rich
-beautifulsoup4
-requests

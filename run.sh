@@ -1,27 +1,23 @@
 #!/bin/bash
 
-echo "🔧 Setting up environment..."
+echo "Setting up environment..."
 
 # Create virtual environment if it doesn't exist
 if [ ! -d "venv" ]; then
-    echo "📦 Creating virtual environment..."
+    echo "Creating virtual environment..."
     python3 -m venv venv
 fi
 
 # Activate the virtual environment
-echo "🧠 Activating virtual environment..."
 source venv/bin/activate
 
 # Upgrade pip
-pip install --upgrade pip
+pip install --upgrade pip -q
 
 # Install dependencies
-echo "📚 Installing dependencies..."
-pip install -r requirements.txt || {
-    echo "⚠️ Couldn't install from requirements.txt. Installing manually..."
-    pip install ffmpeg-python pytube openai-whisper torch rich beautifulsoup4 requests
-}
+echo "Installing dependencies..."
+pip install -r requirements.txt -q
 
 # Run the script
-echo "🚀 Running video transcriber..."
+echo "Ready!"
 python video_transcriber.py
